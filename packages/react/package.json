@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/action-router/action-router-js/issues"
   },
-  "homepage": "https://github.com/action-router/action-router-js#readme"
+  "homepage": "https://github.com/action-router/action-router-js#readme",
+  "dependencies": {
+    "@reactables/core": "^1.2.1"
+  }
 }
