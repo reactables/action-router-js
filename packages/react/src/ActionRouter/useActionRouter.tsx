@@ -1,14 +1,15 @@
-import { ReactNode } from "react";
-import { HookedReactable, useReactable } from "@reactables/react";
+import React from 'react';
+import { ReactNode } from 'react';
+import { HookedReactable, useReactable } from '@reactables/react';
 import {
   RxActionRouter,
   ActionPath,
   ActionRouterState,
   ActionRouterActions,
-} from "./RxActionRouter";
-import MessageService from "./MessageService";
-import { RouterStateContext } from "./RouterStateContext";
-import ActionRouteComponent from "./ActionRouteComponent";
+} from './RxActionRouter';
+import MessageService from './MessageService';
+import { RouterStateContext } from './RouterStateContext';
+import ActionRouteComponent from './ActionRouteComponent';
 
 export type WithRender = {
   render: (rxActionRouter: HookedRxActionRouter) => ReactNode;
@@ -24,15 +25,12 @@ export type ActionRoute = ActionPath & (WithRender | WithComponent);
 
 export type ActionRoutes = Array<ActionRoute>;
 
-export type HookedRxActionRouter = HookedReactable<
-  ActionRouterState,
-  ActionRouterActions
->;
+export type HookedRxActionRouter = HookedReactable<ActionRouterState, ActionRouterActions>;
 
 const getActionPaths = (actionRoutes: ActionRoutes): Array<ActionPath> => {
   const actionPaths: Array<ActionPath> = actionRoutes
     .filter(({ path }) => {
-      return !["notFound"].includes(path);
+      return !['notFound'].includes(path);
     })
     .map(({ path, params }) => {
       return {
@@ -56,7 +54,7 @@ export const useActionRouter = (actionRoutes: ActionRoutes) => {
     RxActionRouter({
       messageService: new MessageService(),
       actionPaths: getActionPaths(actionRoutes),
-    })
+    }),
   );
 
   const [routerState, actions] = rxRouter;

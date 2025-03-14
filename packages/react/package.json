@@ -4,7 +4,8 @@
   "description": "React UI that accepts user input and matches its intent to a structured set of predefined actions via natual language processing.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "rimraf dist && rollup --config"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/action-router/action-router-js#readme",
   "dependencies": {
-    "@reactables/core": "^1.2.1"
+    "@reactables/core": "^1.2.1",
+    "@reactables/react": "^1.2.1"
   }
 }
