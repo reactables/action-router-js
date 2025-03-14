@@ -1,5 +1,5 @@
 {
-  "name": "@action-router/react",
+  "name": "@reactables/react-action-router",
   "version": "0.0.0",
   "description": "React UI that accepts user input and matches its intent to a structured set of predefined actions via natual language processing.",
   "main": "dist/index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/action-router/action-router-js.git"
+    "url": "git+https://github.com/reactables/action-router-js"
   },
   "author": "Dave Lai",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/action-router/action-router-js/issues"
+    "url": "https://github.com/reactables/action-router-js/issues"
   },
-  "homepage": "https://github.com/action-router/action-router-js#readme",
+  "homepage": "https://github.com/reactables/action-router-js#readme",
   "dependencies": {
     "@reactables/core": "^1.2.1",
     "@reactables/react": "^1.2.1"
