@@ -1,6 +1,4 @@
-import { createContext } from "react";
-import { HookedRxActionRouter } from "./useActionRouter";
+import { createContext } from 'react';
+import { HookedRxActionRouter } from './useActionRouter';
 
-export const RouterStateContext = createContext<
-  HookedRxActionRouter | undefined
->(undefined);
+export const RouterStateContext = createContext<HookedRxActionRouter | undefined>(undefined);

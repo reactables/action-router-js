@@ -1,7 +1,12 @@
 {
   "name": "root",
   "description": "Action Router JS Workspace",
-  "scripts": {},
+  "scripts": {
+    "build": "npm run build -w packages/core && npm run build -w packages/examples && npm run build -w packages/forms && npm run build -w packages/react && npm run build -w packages/react-forms",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces",
+    "fix": "npm run fix --workspaces"
+  },
   "private": true,
   "workspaces": [
     "packages/*"

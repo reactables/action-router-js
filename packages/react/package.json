@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "build": "npx rimraf dist && rollup --config --bundleConfigAsCjs"
+    "build": "npx rimraf dist && rollup --config --bundleConfigAsCjs",
+    "lint": "prettier --check src/",
+    "fix": "prettier --write \"src/**/*.(ts*|scss)\""
   },
   "repository": {
     "type": "git",
