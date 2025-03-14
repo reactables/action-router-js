@@ -1,16 +1,8 @@
 # Action Router JS
 
-# 2025 03 13
-
-Tasks
-- what is the api to talk to backend?
-  - i guess just the url?
-
-- Install packages - DONE
-
-- set up workspace
-  - packages
-   - action-router-react
-    - useActionRouter hook
-    - also exports RxActionRouter
-   - action-router-reactable next
+# 2025 03 14
+  - continue with action-router-js - DONE
+    - move it to reactables - DONE
+  - link with basicare plus - IN PROGRESS
+  - add a source for rxpaginated search
+  - build feature
