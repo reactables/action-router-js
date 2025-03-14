@@ -1,3 +1,5 @@
+import typescript from 'rollup-plugin-typescript2';
+
 export default {
   input: ['src/index.ts'],
   output: [
@@ -8,6 +10,6 @@ export default {
       exports: 'named',
     },
   ],
-  plugins: [],
-  external: ['rxjs', 'rxjs/operators'],
+  plugins: [typescript()],
+  external: ['react', 'rxjs', 'rxjs/operators', '@reactables/core', '@reactables/react'],
 };
