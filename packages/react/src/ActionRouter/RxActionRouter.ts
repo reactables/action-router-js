@@ -1,5 +1,5 @@
-import { Reactable, RxBuilder } from '@reactables/core';
-import { from, of } from 'rxjs';
+import { Action, Reactable, RxBuilder } from '@reactables/core';
+import { from, Observable, of } from 'rxjs';
 import { mergeMap, map, catchError } from 'rxjs/operators';
 import MessageService, { ActionResponse } from './MessageService';
 
@@ -47,12 +47,15 @@ const initialState: ActionRouterState = {
 export const RxActionRouter = ({
   messageService,
   actionPaths,
+  sources = [],
 }: {
   messageService: MessageService;
   actionPaths: ActionPath[];
+  sources?: Observable<Action>[];
 }): Reactable<ActionRouterState, ActionRouterActions> => {
   return RxBuilder({
     initialState,
+    sources,
     reducers: {
       updateInput: (state, action) => ({
         ...state,
