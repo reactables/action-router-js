@@ -23,7 +23,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm --no-git-tag-version version ${{ github.event.release.tag_name || inputs.tag_name }} --workspaces
-      - run: npm run build --workspace=@reactables/action-router-js/react
+      - run: npm run build --workspace=@reactables/react-action-router
       - run: npm publish --workspace=@reactables/react-action-router --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
