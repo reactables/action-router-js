@@ -8,7 +8,7 @@ export interface PostMessagePayload<T extends Array<ActionPath>> {
 export interface ActionResponse {
   path: string;
   params: Record<string, string | string[]> | null;
-  originalResponse: string;
+  originalMessage: string;
 }
 
 class MessageService {
