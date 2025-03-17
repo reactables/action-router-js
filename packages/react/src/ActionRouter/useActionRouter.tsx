@@ -46,13 +46,19 @@ const getActionPaths = (actionRoutes: ActionRoutes): Array<ActionPath> => {
  * @description React Hook that receives the list of route configurations
  * and initializes the router.
  */
-export const useActionRouter = (actionRoutes: ActionRoutes) => {
+export const useActionRouter = ({
+  actionRoutes,
+  messageService,
+}: {
+  actionRoutes: ActionRoutes;
+  messageService: MessageService;
+}) => {
   /**
    * Uses Reactable for managing router state
    */
   const rxRouter = useReactable(() =>
     RxActionRouter({
-      messageService: new MessageService(),
+      messageService,
       actionPaths: getActionPaths(actionRoutes),
     }),
   );
