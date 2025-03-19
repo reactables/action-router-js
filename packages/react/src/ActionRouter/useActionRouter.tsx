@@ -1,5 +1,4 @@
-import React from 'react';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { HookedReactable, useReactable } from '@reactables/react';
 import {
   RxActionRouter,
@@ -65,10 +64,6 @@ export const useActionRouter = ({
 
   const [routerState, actions] = rxRouter;
 
-  const sendMessage = () => {
-    actions.sendMessage(routerState.inputValue);
-  };
-
   /**
    * Create an outlet element that will render
    * the appropriate component view when an action is matched.
@@ -83,12 +78,7 @@ export const useActionRouter = ({
 
   return {
     routerState,
-    routerActions: {
-      sendMessage,
-      updateInput: actions.updateInput,
-      clearInput: actions.clearInput,
-      reset: actions.reset,
-    },
+    routerActions: actions,
     routerOutlet,
   };
 };
